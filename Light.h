@@ -10,7 +10,8 @@ public:
     ~Light();
 
     void turnOnLight();
-    Light operator = (Light& light);
+    int getLightNum();
+    void operator = (Light& light);
     void initWire(Wire* wire, Light &light);
 
 private:

@@ -16,35 +16,33 @@ Wire::Wire(const Wire& wire)
 
 Wire::~Wire()
 {
-    cout<< "Wire Destructor"<<endl;
+    cout<< "Wire Destructor"<<endl;    
 }
 
-Wire Wire::operator = (Wire& wire)
+void Wire::operator =(Wire& wire)
 {
     cout<< "Wire Assignment operator"<<endl;
-    return wire;
 }
 
-void Wire::initLight(Light& light)
+void Wire::initLight(Light& lights)
 {
-    cout<<"Initing light to Wire"<<endl;
-    m_connectedLights.push_back(light);
+    cout<<"Initing light "<<lights.getLightNum()<<" to Wire"<<endl;
     cout<<"Capacity : "<<m_connectedLights.capacity()<<endl;
-    cout<<"After pushing size = "<<sizeof(m_connectedLights)<<endl;
-
+    m_connectedLights.push_back(lights);
+    cout<<"Capacity : "<<m_connectedLights.capacity()<<endl;
 }
 
 void  Wire::turnOnWire()
 {
     cout <<"Wire is ON"<<endl;
-    /*for(auto light = m_connectedLights.begin(); light != m_connectedLights.end(); light++)
+    for(auto light = m_connectedLights.begin(); light != m_connectedLights.end(); light++)
     {
         light->turnOnLight();
-    }*/
-    for(auto light:m_connectedLights)
+    }
+    /*for(auto light:m_connectedLights)
     {
         light.turnOnLight();
-    }
+    }*/
 
 }
 

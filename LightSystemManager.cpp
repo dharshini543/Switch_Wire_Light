@@ -20,10 +20,9 @@ LightSystemManager::~LightSystemManager()
     cout<<"LightSystemManager Destructor"<<endl;
 }
 
-LightSystemManager LightSystemManager::operator =(LightSystemManager &light)
+void LightSystemManager::operator =(LightSystemManager &light)
 {
     cout<< "Light Assignment operator"<<endl;
-    return light;
 }
 
 void LightSystemManager::select()
@@ -37,13 +36,13 @@ void LightSystemManager::select()
         {
         case ConnectLightsToSwitch:
         {
-            Wire* wire = new Wire;
-            for(int i = 0;i < 3;i++)
+            Wire wire;
+            for(int i = 0;i < 10;i++)
             {
                 Light light(++lightNum);
-                light.initWire(wire,light);
+                light.initWire(&wire,light);
             }
-            m_switch.initWire(wire);
+            m_switch.initWire(&wire);
 
         }
         break;

@@ -18,7 +18,7 @@ public:
 
     void connectWireToLight(int lightNum, Wire *wire);
     void connectWireToSwitch(Wire* wire);
-    LightSystemManager operator = (LightSystemManager& light);
+    void operator = (LightSystemManager& light);
     void select();
 
 private:

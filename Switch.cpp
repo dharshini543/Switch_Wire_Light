@@ -17,10 +17,9 @@ Switch::~Switch()
     cout<< "Switch Destructor"<<endl;
 }
 
-Switch Switch::operator = (Switch& Switch)
+void Switch::operator =(Switch& Switch)
 {
     cout<< "Switch Assignment operator"<<endl;
-    return Switch;
 }
 
 void Switch::initWire(Wire* wire)

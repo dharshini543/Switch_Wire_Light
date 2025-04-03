@@ -4,6 +4,7 @@ using namespace std;
 
 Light::Light(int Lightnum)
 {
+    cout<<endl;
     cout<< "Light constructor"<<endl;
     m_Lightnum = Lightnum;
 }
@@ -16,13 +17,12 @@ Light::Light(const Light& light)
 
 Light::~Light()
 {
-    cout<< "Light Destructor"<<endl<<endl;
+    cout<< "Light Destructor"<<endl;
 }
 
-Light Light::operator = (Light& light)
+void Light::operator = (Light& light)
 {
     cout<< "Light Assignment operator"<<endl;
-    return light;
 }
 
 void Light::initWire(Wire* wire,Light& light)
@@ -35,5 +35,10 @@ void Light::initWire(Wire* wire,Light& light)
 void Light::turnOnLight()
 {
     cout<<"Light "<<m_Lightnum<<" is turned ON"<<endl;
+}
+
+int Light::getLightNum()
+{
+    return m_Lightnum;
 }
 

@@ -12,7 +12,7 @@ public:
     ~Wire();
 
     void turnOnWire();
-    Wire operator = (Wire& wire);
+    void operator = (Wire& wire);
     void initLight(Light &light);
 
 private:
